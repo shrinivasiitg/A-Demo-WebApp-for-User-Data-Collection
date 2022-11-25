@@ -3,9 +3,7 @@ package com.demo.userdatacollection.model;
 import lombok.Data;
 
 @Data
-public class User {
-
-    private String userId;
+public class UserModel {
 
     private String firstName;
     private String lastName;

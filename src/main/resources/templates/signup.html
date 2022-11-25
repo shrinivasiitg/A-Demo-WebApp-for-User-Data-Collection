@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Signup new user</title>
 </head>
 <body>
+
+<p th:text="${emailDoesNotExistErrorMessage}"/>
+<p th:text="${emailCantBeEmptyErrorMessage}"/>
+
 <form action="/new-user-signup" method="post">
     <div>First name:<input name="firstName" placeholder="First name "></div>
     <div>Last name: <input name="lastName" placeholder="Last name"></div>
     <div>Email: <input name="email" placeholder="Email"></div>
     <div>Password: <input name="password" placeholder="Password" type="password"></div>
     <div>Repeat password: <input name="repeatPassword" placeholder="Repeat password" type="password"></div>
-    <div><input type="Submit"></div>
+    <button type="submit">SignUp</button>
 </form>
+
+<br>
+
+<form action="/signin" method="get">
+    OR, Existing Users:
+    <button type="submit">Signin</button>
+</form>
+
 </body>
 </html>
 

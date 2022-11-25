@@ -1,6 +1,6 @@
 package com.demo.userdatacollection.dao.service;
 
-import com.demo.userdatacollection.dao.entity.User;
+import com.demo.userdatacollection.dao.entity.UserEntity;
 import com.demo.userdatacollection.dao.respository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class UserService {
      * @param userId
      * @return
      */
-    public User getUserByUserId(int userId) {
+    public UserEntity getUserByUserId(int userId) {
         return userRepository.findById(userId).orElse(null);
     }
 
@@ -27,7 +27,7 @@ public class UserService {
      * @param user
      * @return
      */
-    public User insertNewUser(User user) {
+    public UserEntity insertNewUser(UserEntity user) {
         return userRepository.save(user);
     }
 
@@ -37,7 +37,7 @@ public class UserService {
      * @param user
      * @return
      */
-    public User updateUser(User user) {
+    public UserEntity updateUser(UserEntity user) {
         return userRepository.save(user);
     }
 
@@ -47,7 +47,7 @@ public class UserService {
      * @param email
      * @return
      */
-    public User getUserByEmail(String email) {
+    public UserEntity getUserByEmail(String email) {
         return userRepository.searchByEmail(email);
     }
 }

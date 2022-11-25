@@ -3,6 +3,7 @@ package com.demo.userdatacollection.dao.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 import javax.persistence.*;
 
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "USER")
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue
@@ -21,9 +22,10 @@ public class User {
     @Column(name = "first_name")
     private String firstName;
 
-    @Column(name  ="last_name")
+    @Column(name = "last_name")
     private String lastName;
 
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Column(name = "phone_number")

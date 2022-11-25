@@ -5,15 +5,23 @@
     <title>WebApp POC</title>
 </head>
 <body>
-<p th:text="'This is a Thymeleaf template for the home page with very basic HTML.'" />
-<p th:text="'One sample user details looks like (admin, in this case):'" />
+<p th:text="'This is a Thymeleaf template for the home page with very basic HTML.'"/>
+<p th:text="'One sample user details looks like (admin, in this case):'"/>
 <p th:text="'First Name: ' + ${firstName}"/>
 <p th:text="'First Name: ' + ${lastName}"/>
 <p th:text="'Email: ' + ${email}"/>
 <p th:text="'Country: ' + ${country}"/>
 
+<form action="/signin" method="get">
+    Existing Users:
+    <button type="submit">SignIn</button>
+</form>
+
+<br>
+
 <form action="/signup" method="get">
-    <button type="submit">Signup</button>
+    OR, New Users
+    <button type="submit">SignUp</button>
 </form>
 
 </body>

@@ -1,9 +1,9 @@
 package com.demo.userdatacollection.dao.respository;
 
-import com.demo.userdatacollection.dao.entity.User;
+import com.demo.userdatacollection.dao.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
-    User searchByEmail(String email);
+    UserEntity searchByEmail(String email);
 }
