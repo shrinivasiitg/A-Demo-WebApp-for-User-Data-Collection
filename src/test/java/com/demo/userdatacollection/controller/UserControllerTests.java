@@ -112,6 +112,6 @@ public class UserControllerTests {
     }
 
     private UserEntity singleEmptyRowOfUserEntity() {
-        return new UserEntity(0, "", "", "", "");
+        return new UserEntity(0, "", "", "", "", "");
     }
 }

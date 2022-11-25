@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup new user</title>
+</head>
+<body>
+
+<p th:text="${emailDoesNotExistErrorMessage}"/>
+<p th:text="${emailCantBeEmptyErrorMessage}"/>
+
+<form action="/update-user" method="post" th:object="${userModel}">
+    <div>First name:<input type="text" name="firstName" th:field="*{firstName}"></div>
+    <div>Last name:<input type="text" name="firstName" th:field="*{lastName}"></div>
+    <div>Can't update Email:<input type="text" name="email" th:field="*{email}" readonly></div>
+    <div>Phone Number:<input type="text" name="phoneNumber" th:field="*{phoneNumber}"></div>
+    <div>Country:<input type="text" name="country" th:field="*{country}"></div>
+    <br>
+    <button type="submit">Update</button>
+</form>
+
+<br>
+
+<form action="/home" method="get">
+    Not sure how you got here? :
+    <button type="submit">Take me home</button>
+</form>
+
+</body>
+</html>
+

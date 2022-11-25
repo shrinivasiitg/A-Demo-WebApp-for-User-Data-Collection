@@ -6,8 +6,11 @@ import lombok.Data;
 public class UserModel {
 
     private String firstName;
-    private String lastName;
+    private String lastName = "";
     private String email;
     private String password;
     private String repeatPassword;
+
+    private String phoneNumber = "";
+    private String country = "";
 }

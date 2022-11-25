@@ -1,4 +1,4 @@
-[//]: # (cat v0.md v2.md v1.md > README.md)
+[//]: # (cat v0.md v3.md v2.md v1.md > README.md)
 # A-Demo-WebApp-for-User-Data-Collection
 
 ## A demo Web Application to take user input from the end-users. Play with it, here in AWS (while it is live, for limited time) : http://44.201.181.113:8080
@@ -43,6 +43,30 @@ sudo apt install openjdk-11-jre-headless -y
 ```
 
 This was sufficient for me (with Ubuntu OS). Kindly find/follow the standard ```JAVA``` setup process for your OS.
+
+---
+
+# v3 #
+
+### Adding the diagrams in a bit ###
+
+## Tech-Features ##
+
+### This completes the Basic Requirements of the Task ###
+
+1. Increased Fields for User Input
+   1. Use can provide more input than provided at SignUp
+2. Added ability for users to update 
+3. Added security that every update request requires proof by providing credentials
+
+## Potential for v4 ##
+
+1. Add caching to DB layer
+2. Add session management
+3. Increase password sanitation and validation check
+4. Store password securely and sensitively.
+   1. Maybe just store hash (with salting) and not actual passwords in DB
+5. Add more test cases.
 # v2 #
 
 1. New home/landing page that looks like

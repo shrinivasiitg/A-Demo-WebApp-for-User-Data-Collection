@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Request</title>
+</head>
+<body>
+
+<p th:text="${emailExistsErrorMessage}"/>
+<p th:text="${emailDoesNotExistErrorMessage}"/>
+
+<form action="/update-user" method="post">
+    <div>Email: <input name="email" placeholder="Email"></div>
+    <div>Password: <input name="password" placeholder="Password" type="password"></div>
+    <button type="submit">Verify</button>
+</form>
+<br>
+<form action="/home" method="get">
+    Not sure how you got here? :
+    <button type="submit">Take me home</button>
+</form>
+
+</body>
+</html>
+

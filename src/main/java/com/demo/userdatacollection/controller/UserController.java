@@ -55,8 +55,18 @@ public class UserController {
 
         UserEntity userDao = new UserEntity();
         userDao.setFirstName(userModel.getFirstName());
-        userDao.setLastName(userModel.getLastName());
+        if (StringUtils.isEmpty(userModel.getLastName())) {
+            userDao.setLastName("");
+        } else {
+            userDao.setLastName(userModel.getLastName());
+        }
         userDao.setEmail(userModel.getEmail());
+        userDao.setPhoneNumber("");
+        userDao.setCountry("Canada");
+
+        userModel.setLastName(userDao.getLastName());
+        userModel.setPhoneNumber(userDao.getPhoneNumber());
+        userModel.setCountry(userDao.getCountry());
 
         log.info(String.format("Inserting a new user=%s", userDao));
         UserEntity newUser = userService.insertNewUser(userDao);
@@ -93,7 +103,44 @@ public class UserController {
 
         userModel.setFirstName(existingUserInDB.getFirstName());
         userModel.setLastName(existingUserInDB.getLastName());
+        userModel.setPhoneNumber(existingUserInDB.getPhoneNumber());
+        userModel.setCountry(existingUserInDB.getCountry());
         return "user-details";
+    }
+
+    @GetMapping("/update-user")
+    public String updateUserForm() {
+        return "verify-update-request";
+    }
+
+    @PostMapping("/update-user")
+    public String updateUserFormSubmit(@ModelAttribute UserModel userModel, Model model) {
+        log.info(String.format("updating the existing user=%s", userModel));
+
+        UserEntity existingUserInDB = userService.getUserByEmail(userModel.getEmail());
+        if (doesEmailExist(existingUserInDB) == false) {
+            String emailDoesNotExistErrorMessage = String.format(
+                    "The email=%s entered is incorrect. We need exact credentials to ensure trust and to increase security of customer data.",
+                    userModel.getEmail());
+            log.info(emailDoesNotExistErrorMessage);
+            model.addAttribute("emailDoesNotExistErrorMessage", emailDoesNotExistErrorMessage);
+            return "verify-update-request";
+        } else if (StringUtils.isEmpty(userModel.getFirstName())) {
+            log.info("Email verification has been done. Moving to updating user details.");
+            userModel.setFirstName(existingUserInDB.getFirstName());
+            model.addAttribute("userModel", userModel);
+            return "enter-updates";
+        } else {
+            log.info("User has requested for updates. So updating the database.");
+            existingUserInDB.setFirstName(userModel.getFirstName());
+            existingUserInDB.setLastName(userModel.getLastName());
+            existingUserInDB.setPhoneNumber(userModel.getPhoneNumber());
+            existingUserInDB.setCountry(userModel.getCountry());
+
+            userService.updateUser(existingUserInDB);
+            model.addAttribute("userModel", userModel);
+            return "user-details";
+        }
     }
 
     /**

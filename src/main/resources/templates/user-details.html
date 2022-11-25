@@ -11,8 +11,14 @@ Voila!! You are in. Here are the details:
 
 <!--<p th:text="'userId: ' + ${userModel.userId}" />-->
 <p th:text="'First Name: ' + ${userModel.firstName}" />
-<p th:text="'First Name: ' + ${userModel.lastName}" />
+<p th:text="'Last Name: ' + ${userModel.lastName}" />
 <p th:text="'Email: ' + ${userModel.email}" />
+<p th:text="'Phone Number: ' + ${userModel.phoneNumber}" />
+<p th:text="'Country: ' + ${userModel.country}" />
 
+<form action="/update-user" method="get">
+    Wish to update the information? Then, go to:
+    <button type="submit">Perform Updates</button>
+</form>
 </body>
 </html>
