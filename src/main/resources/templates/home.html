@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WebApp POC</title>
+</head>
+<body>
+<p th:text="'This is a Thymeleaf template for the home page with very basic HTML.'" />
+<p th:text="'One sample user details looks like (admin, in this case):'" />
+<p th:text="'First Name: ' + ${firstName}"/>
+<p th:text="'First Name: ' + ${lastName}"/>
+<p th:text="'Email: ' + ${email}"/>
+<p th:text="'Country: ' + ${country}"/>
+
+<form action="/signup" method="get">
+    <button type="submit">Signup</button>
+</form>
+
+</body>
+</html>
+
