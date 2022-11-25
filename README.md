@@ -28,11 +28,12 @@ open:- http://localhost:8080/
 ```
 # v1 #
 
-1. Added home/landing page that looks like this: ![alt text](documentation/v1/v1_home.png "v1_home")
+1. Added home/landing page that looks like
+   this: </br><img src="documentation/v1/v1_home.png" alt="drawing" width="300"/>
 2. Click to ```Signup``` for new user opens this signup
-   page: ![alt text](documentation/v1/v1_user_signup_page.png "v1_user_signup_page")
+   page: </br><img src="documentation/v1/v1_user_signup_page.png" alt="drawing" width="350"/>
 3. Fill-up the details  (something like
-   this): ![alt text](documentation/v1/v1_user_signup_POST.png "v1_user_signup_POST")
+   this): </br><img src="documentation/v1/v1_user_signup_POST.png" alt="drawing" width="400"/>
 4. After filling up, submit button stores this as new user to database (with newly created
    usedId): </br><img src="documentation/v1/v1_user_signup_result.png" alt="drawing" width="500"/>
 
