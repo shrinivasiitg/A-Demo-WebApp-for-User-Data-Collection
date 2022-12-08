@@ -80,6 +80,7 @@ public class UserController {
 
     @GetMapping("/signin")
     public String signInForm() {
+        log.info("Opening Signin page");
         return "signin";
     }
 

@@ -13,7 +13,7 @@ import java.util.Map;
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
+    @GetMapping(value={"", "/", "home", "/home"})
     public ModelAndView homePage() {
         Map<String, String> model = new HashMap<>();
         model.put("firstName", "Shrinivas");
